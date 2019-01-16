@@ -1,1 +1,27 @@
-// 1 hour
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Hunting Github</title>
+</head>
+<body>
+  <button id="mygithub_data">Get My Github Info.</button>
+  <div id="container"></div>
+  <script>
+    var button = document.getElementById('mygithub_data');
+    button.addEventListener('click', function() {
+        $.get('https://api.github.com/users/bernardT', displayName);
+    });
+
+    function displayName(data) {
+        console.log(data);
+    }
+
+  </script>
+</body>
+</html>
+
+
