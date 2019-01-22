@@ -1,0 +1,26 @@
+#wrapper{
+    width: 950px;
+    height: 320px;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #778897;
+}
+
+.house{
+    display: inline-block;
+    vertical-align:top;
+    border: 2px solid black;
+    height: 129px;
+    width: 229px;
+}
+
+img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+img:hover {
+    cursor: text; 
+}
