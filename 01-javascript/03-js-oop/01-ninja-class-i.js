@@ -1,5 +1,4 @@
   function Ninja(name) {
-    // const self = this;
     this.name = name;
     this.health = 100;
     let speed = 3;
