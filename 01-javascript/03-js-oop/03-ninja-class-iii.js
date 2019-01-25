@@ -9,11 +9,11 @@ class Ninja {
     }
   
     sayName() {
-        console.log(`My name is ${ this.constructor.name }`);
+        console.log(`My name is ${ this.name }`);
     }
   
     showStats(){
-        console.log(`Name: ${ this.constructor.name }, Strength: ${ this.constructor.strength } `);
+        console.log(`Name: ${ this.name }, Health: ${ this.health }, Speed: ${ this.speed }, Strength: ${ this.strength } `);
     }
 
     drinkSake(){
@@ -35,7 +35,7 @@ class Sensei extends Ninja {
     speakWisdom() {
         // by using super, we can call the parent method
         const message = super.drinkSake();
-        console.log("Drink Sake to live longer");
+        console.log("What one programmer can do in one month, two programmers can do in two months");
     }
 }
 const superSensei = new Sensei("Master Splinter");
