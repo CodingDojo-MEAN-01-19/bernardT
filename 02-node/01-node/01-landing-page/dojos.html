@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+       <link rel="stylesheet" type="text/css" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+        <title> Registration Form </title>
+    </head>
+    <body>
+        <form action="process.php" method="post">
+            <p>My Registration Form</p>
+
+            <p>Please Register</p>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name">
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <label for="pw_confirm">PW Confirm:</label>
+            <input type="password" id="pw_confirm" name="pw_confirm">
+            <label for="bday">Birthday:</label>
+            <input type="date" id="bday" name="bday">
+
+            <p>Please select your gender</p>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="other">Other</label>
+            <input type="radio" id="other" name="gender" value="other">
+
+            <p>Please select your favorite language</p>
+            <select name="Favorite Language">
+                <option value="javascript">JavaScript</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+            </select>
+
+            <p>A short description about yourself:</p>
+            <textarea name="description"></textarea>   
+
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
+
+
