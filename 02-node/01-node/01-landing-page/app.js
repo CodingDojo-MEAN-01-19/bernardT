@@ -20,8 +20,8 @@ var server = http.createServer(function(req, res) {
       res.write(contents);
       res.end();
     })
-  } else if (req.url === '/images/') {
-    fs.readFile('blogging.jpg', 'utf8', function(errors, contents) {
+  } else if (req.url === '/images/blogging.jpg') {
+    fs.readFile('./images/blogging.jpg', 'utf8', function(errors, contents) {
       res.writeHead(200, {'Content-Type': 'images/jpg'});
       res.write(contents);
       res.end();
