@@ -1,0 +1,10 @@
+.container{
+    width: 900px;
+    margin: 0 auto;
+    background-color: aqua;
+}
+img{
+    width: 25%;
+    display: inline-block;
+    border:1px solid red;
+}
