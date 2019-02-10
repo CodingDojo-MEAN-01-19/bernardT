@@ -20,20 +20,20 @@ io.on('connection', function(socket){ //2 This triggers our server's connection 
     socket.on("requestCounter", function() { //3 
         let counter =  count++;
         console.log("counter started by server", counter)
-        return counter;
-        // io.emit("epicbtn",{counter});
+        // return counter;
+        io.emit("counterMessage",{counter});
         
     }) 
-    io.emit("counterMessage",{counter:count});
+    socket.emit("counterMessage",{counter:count});
 
     socket.on("resetRequest", function() { //3 
         count = 0;
         let reset = count;
         console.log("reset started by server", reset)
-        return reset;
-        // io.emit("resetCount",{reset});
+        // return reset;
+        io.emit("resetCounter",{reset});
     }) 
-    io.emit("resetCounter",{reset:count});
+    // io.emit("resetCounter",{reset:count});
 
 }); 
 

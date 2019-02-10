@@ -16,7 +16,9 @@
             })
             //Grabs the counter value that was passed from the server
             socket.on('counterMessage', function(data) { //4
-                $('#message').html("The button has been pushed: " + data.counter + "time(s)");                 console.log("counter received from server", data);
+                let countValue = data.counter;
+                $('#message').html("The button has been pushed: " + countValue + "time(s)");                 
+                console.log("counter received from server", data);
             })
             
             //Reset the counter to 0;
