@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login and Registration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <% if(messages.errors) { %>
+            <% for (var x of messages.errors) { %>
+                <h3><%= x %></h3>
+            <% } %>
+        <% } %>
+        <h1>Welcome!</h1>
+        <hr>
+        <h3>Register</h3>
+        <form action="/register" method="POST">
+            First Name:
+            <input type="text" name="firstname">
+            <br>
+            <br> Last Name:
+            <input type="text" name="lastname">
+            <br>
+            <br> Email:
+            <input type="text" name="email">
+            <br>
+            <br> Password:
+            <input type="password" name="password">
+            <br>
+            <br> Confirm Password:
+            <input type="password" name="pwconf">
+            <br>
+            <br> Birthday:
+            <input type="date" name="birthday">
+            <br>
+            <br>
+            <input type="submit" value="Register">
+            <br>
+            <br>
+        </form>
+        <hr>
+        <h3>Login</h3>
+        <form action="/login" method="POST">
+            Email:
+            <input type="text" name="email">
+            <br>
+            <br> Password:
+            <input type="password" name="password">
+            <br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
