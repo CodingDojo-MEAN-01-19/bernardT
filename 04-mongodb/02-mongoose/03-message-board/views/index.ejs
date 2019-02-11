@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Message Board</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Message Board!</h1>
+        <hr>
+
+        <% if (typeof(errors) !== 'undefined') { %>
+        <% for (let x of errors){ %>
+            <div style= "border: 2px solid black; width: 30%;">
+                <%= x %>
+            </div>
+        <% } } %> 
+        
+        <fieldset style= "width: 40%;">
+            <legend>Create New Message</legend>
+
+            <form action= "/message" method= "post">
+
+                <label>Name:</label>
+                <input type="text" name="name">
+                <br>
+
+                <label>Message:</label>
+                <textarea name= "message"></textarea>
+                <br>
+
+                <input type="submit" class="btn btn-success btn-lg"  name="submit" value="Create Message">
+                
+            </form>
+
+        </fieldset>
+        <br>
+        <% if (messages) { %>	
+            <% for(let x of messages) { %>
+                <h2>Name: <%= x.name %></h2>
+                <h2>Message: <%= x.message %></h2>
+                <% if (x.comments) { %>
+                    <% for (let c of x.comments) { %>
+                        <h4><i>Name: <%= c.name %></i></h4>
+                        <h4><i>Comment: <%= c.text %></i></h4>
+                    <% }} %>
+            <fieldset style= "width: 40%;"><br>
+                <legend>Add a comment </legend>
+                <form action= "/comment" method= "post">
+                    <input type="hidden" name="messageId" value= "<%= x._id %>">
+                    <label>Name:</label>
+                    <input type="text" name="name">
+                    <br>
+                    <label>Comment:</label>
+                    <textarea name= "comment"></textarea>
+                    <br>
+                    <input type="submit" class="btn btn-success btn-lg" name="submit" value="Post Comment">
+                </form>
+            </fieldset>
+            <br>
+        <% }} %>
+    </div>
+</body>
+</html>
+
