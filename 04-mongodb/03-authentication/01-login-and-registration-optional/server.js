@@ -189,4 +189,3 @@ app.post('/logout', function(request, response){
 app.listen(8000, function() {
     console.log("listening on port 8000");
 });
-
