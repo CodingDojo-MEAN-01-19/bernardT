@@ -17,11 +17,11 @@ app.set('view engine', 'ejs');
 
 // Require mongoose (to receive post data from database)
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/quoting_dojo');
+mongoose.connect('mongodb://localhost/quote_dojo');
 
 var QuoteSchema = new mongoose.Schema({
-    name: String,
-    quote: String
+    name: {type: String, required: true, maxlength: 20},
+    quote: {type: String, required: true}
 }, {timestamps: true})
 
 mongoose.model('Quote', QuoteSchema);
@@ -35,7 +35,7 @@ var Quote = mongoose.model('Quote')
 //     // This is where we will retrieve the users from the database and include them in the view page we will be rendering.
 //     res.render('index');
 // })
-// Add User Request 
+// Add User Request
 
 app.get('/', function(req, res){
     res.render('index');
@@ -47,11 +47,11 @@ app.post('/quotes', function(req, res){
     quote.save(function(err){
         if(err) {
             console.log('Error, try again');
-        } 
+        }
         else { console.log('Successfully added quote!');
         }
         res.redirect('/');
-        });   
+        });
     });
 
     app.get('/quotes', function(req, res){
