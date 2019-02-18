@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rabbit Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Rabbit Farm!</h1>
+
+        <a href="/new">Breed a new Rabbit!</a>
+
+        <h3>Check out all our existing breeds:</h3>
+
+        <% if (rabbits) { %>
+            <% for (let x of rabbits) { %>
+            <div style= "border: 2px solid black; width: 30%;">
+                <a href="/show/<%= x.id %>"><%= x.name %></a>
+                <p><%= x.description %></p>
+                <a href="/destroy/<%= x.id %>" >Delete</a>
+            </div>
+            <br>
+            <% } %>
+        <% } %>
+    </div>
+</body>
+</html>
+
