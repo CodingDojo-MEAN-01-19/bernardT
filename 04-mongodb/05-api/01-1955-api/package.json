@@ -1,0 +1,21 @@
+{
+  "name": "1995_api_mean",
+  "version": "1.0.0",
+  "description": "1995 API assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "jeremybwilson",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "mongoose": "^5.4.10",
+    "regex": "^0.1.1"
+  },
+  "devDependencies": {}
+}
