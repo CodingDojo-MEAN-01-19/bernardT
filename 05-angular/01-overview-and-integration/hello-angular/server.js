@@ -17,7 +17,7 @@ app
   .use(parser.json())
   .use(parser.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname + '/books/dist/public'));
+app.use(express.static(path.join(__dirname, 'books/dist/public')));
 
 require('./server/config/database');
 
