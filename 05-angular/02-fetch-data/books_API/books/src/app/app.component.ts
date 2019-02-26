@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-
-import { Book } from './models'; // references only the directory because of the bailing file
-// (import { Book } from './models/book.model';) - without bailing
 
 @Component({
   selector: 'app-root',
@@ -11,22 +7,4 @@ import { Book } from './models'; // references only the directory because of the
 })
 export class AppComponent {
   title = 'books';
-  // create an instance variable of the Book class, and invoke it to be a new Book object
-  // ngmodel this will be used to associate book with all the input fields in the form
-  book = new Book();
-
-  // empty array for collecting books created using entry form
-  books: Book[] = [];
-  // event: Event is a custom data type.  default is any, which does not list methods for event.
-  // form: NgForm for accepting the bookForm object
-  onSubmit(event: Event, form: NgForm) {
-    event.preventDefault(); // prevents the default form action to submit info somewhere.
-
-    console.log('submitting form', this.book); // book object passed from binding and reference
-    this.books.push(this.book); // books passed can be collected into the books array
-    this.book = new Book(); // break binding reference to prevent creating empty records, since the form is reset below
-    console.log('books', 'this.books');
-    // Use form to reset
-    form.reset();
-  }
 }

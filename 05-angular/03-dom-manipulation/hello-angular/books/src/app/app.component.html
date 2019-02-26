@@ -1,0 +1,43 @@
+<div style="text-align:center">
+  <h1>Welcome to the restful task api</h1>
+  <div>
+    <h3>Add a new task</h3>
+    <form (submit)="CreateTask()">
+      <p>
+        Title: <strong>{{ NewTask.title }}</strong> Description:
+        <strong>{{ NewTask.description }}</strong>
+      </p>
+      <input type="text" name="NewTask.title" [(ngModel)]="NewTask.title" />
+      <input
+        type="text"
+        name="NewTask.description"
+        [(ngModel)]="NewTask.description"
+      />
+      <input type="submit" value="Create Task" />
+    </form>
+  </div>
+  <h3>List of All tasks</h3>
+  <div style="border: solid black;" *ngFor="let t of tasks">
+    <h4>{{ t.title }}</h4>
+    <h5>{{ t.description }}</h5>
+    <form (submit)="EditOnClick(t)">
+      <input type="submit" value="Edit" />
+    </form>
+    <form (submit)="DeleteTask(t._id)">
+      <input type="submit" value="Delete" />
+    </form>
+    <div *ngIf="t.ShowEditForm">
+      <h3>Edit this task</h3>
+      <form (submit)="OnEdit(t)">
+        <p>{{ EditTask | json }}</p>
+        <input type="text" name="EditTask.title" [(ngModel)]="t.title" />
+        <input
+          type="text"
+          name="EditTask.description"
+          [(ngModel)]="t.description"
+        />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </div>
+</div>
