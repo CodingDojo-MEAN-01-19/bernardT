@@ -1,0 +1,34 @@
+
+<p>New Task</p>
+<form (submit)="onSubmitcreate()">
+  Title: <input type="text" name="newTask.title" [(ngModel)]="newTask.title"/> <br>
+  Description: <input type="text" name="newTask.description" [(ngModel)]="newTask.description"/> <br> 
+  <input type="submit" value="Create"/>
+</form> <br><br>
+
+<button (click)="getAll()">All tasks</button>
+<br><br>
+
+{{task | json}}
+
+<div *ngFor="let t of tasks">
+
+<p>{{t.title}} </p>
+<button (click)="getOne(t._id)">Edit</button>
+<button (click)="choose(t)">Show</button>
+<button (click)="removeTask(t._id)">Delete</button>
+</div>
+<div *ngIf="selectedTask">
+
+  <h3>{{selectedTask.title}}</h3>
+  <h3>{{selectedTask.description}}</h3>
+  
+</div>
+
+<div *ngIf="editTask">
+  <form (submit)="onSubmitedit()">
+    Title: <input type="text" name="editTask.title" [(ngModel)]="editTask.title"/> <br>
+    Description: <input type="text" name="editTask.description" [(ngModel)]="editTask.description"/> <br> 
+    <input type="submit" value="Edit"/>
+  </form>
+</div>
