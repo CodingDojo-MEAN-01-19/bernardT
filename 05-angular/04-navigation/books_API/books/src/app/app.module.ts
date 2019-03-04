@@ -12,6 +12,8 @@ import { BookNewComponent } from './books/book-new/book-new.component';
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
 import { SearchPipe } from './search.pipe';
 
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { SearchPipe } from './search.pipe';
     BookDetailComponent,
     SearchPipe,
   ],
-  imports: [BrowserModule, FormsModule, HttpClientModule], // need to use the content it provides to work with the rendered form
+  // need to use the content it provides to work with the rendered form
+  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [], // the  ngmodule
   bootstrap: [AppComponent],
 })
