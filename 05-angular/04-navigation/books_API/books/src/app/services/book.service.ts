@@ -34,4 +34,8 @@ export class BookService {
     console.log('deleting book in service');
     return this.http.delete<Book>(`${this.base}/${id}`);
   }
+
+  showBook(id: string): Observable<Book> {
+    return this.http.get<Book>(`${this.base}/${id}`);
+  }
 }

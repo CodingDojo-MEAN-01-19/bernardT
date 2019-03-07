@@ -17,7 +17,7 @@
 
     <!-- {{ bookForm.value | json }} -->
     <form
-      (submit)="bookForm.valid && onCreate($event, bookForm)"
+      (submit)="bookForm.valid && onSubmit($event, bookForm)"
       #bookForm="ngForm"
     >
       <div>

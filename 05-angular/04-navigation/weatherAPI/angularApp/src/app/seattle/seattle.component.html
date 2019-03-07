@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="text-center">{{data?.name}}</h1>
+  <div class="main-content">
+      <p>Humidity: {{data?.main.humidity}}</p>
+      <p>Temperature (Average): {{data?.main.temp}} F</p>
+      <p>High: {{data?.main.temp_max}} F</p>
+      <p>Low: {{data?.main.temp_min}} F</p>
+      <p>Status: <span *ngFor="let weather of data?.weather">{{weather.main}}, </span></p>
+  </div>
+  <div class="main-content">
+    <img class="img-fluid float-right" src="http://78.media.tumblr.com/0555115ee116d9f0550479f158f82e66/tumblr_inline_nb10rjQgBr1rgnut4.jpg">
+  </div>
+</div>

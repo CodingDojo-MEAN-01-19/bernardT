@@ -1,7 +1,16 @@
-<section *ngIf="book">
+<!-- <section *ngIf="book">
   <p>id: {{ book.id }}</p>
   <p>title: {{ book.title }}</p>
   <p>author: {{ book.author }}</p>
   <p>pages: {{ book.pages }}</p>
   <p>publisher: {{ book.publisher }}</p>
+</section> -->
+
+<section>
+  <h3>Selected Book</h3>
+  <p>id: {{ book?.id }}</p>
+  <p>title: {{ book?.title }}</p>
+  <p>author: {{ book?.author }}</p>
+  <p>pages: {{ book?.pages }}</p>
+  <p>publisher: {{ book?.publisher }}</p>
 </section>

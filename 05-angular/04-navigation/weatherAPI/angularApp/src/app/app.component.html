@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <H3>DOJO WEATHER FORECAST</H3>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a class="nav-link active" [routerLink]="['chicago']">Chicago <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['burbank']">Burbank</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['dallas']">Dallas</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['dc']">DC</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['sanjose']">San Jose</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['seattle']">Seattle</a>
+          </li>
+      </ul>
+      </div>
+    </nav>
+</nav>
+
+<router-outlet></router-outlet>
