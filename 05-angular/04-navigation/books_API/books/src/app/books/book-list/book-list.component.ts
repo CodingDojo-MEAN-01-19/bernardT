@@ -15,7 +15,7 @@ export class BookListComponent implements OnInit {
   selectedBook: Book;
 
   // reference the injected bookservice into the constructor
-  constructor(private bookService: BookService) {}
+  constructor(private readonly bookService: BookService) {}
 
   ngOnInit() {
     console.log(this.bookService);
@@ -42,12 +42,11 @@ export class BookListComponent implements OnInit {
     });
   }
 
-  onSelect(book: Book): void {
-    console.log('selecting', book);
-    // ternary operation
-    // this.selectedBook = (some expression)       ? true : false;
+  onSelect(book: Book) {
+    console.log('selecting a book', book);
+
     this.selectedBook = this.selectedBook === book ? null : book;
-    // ***alternative approach
+
     // if (this.selectedBook === book) {
     //   this.selectedBook = null;
     // } else {
@@ -55,11 +54,13 @@ export class BookListComponent implements OnInit {
     // }
   }
 
-  onDelete(bookId: number) {
-    console.log('deleting book');
-    this.bookService.destroyBook(bookId).subscribe(deletedBook => {
-      console.log('deleted', deletedBook);
-      this.books = this.books.filter(book => book.id !== bookId); // removes a book from the book array
+  // removes a book from the book array
+  onDelete(book: Book) {
+    console.log('deleting book', book);
+
+    this.bookService.removeBook(book._id).subscribe(deletedBook => {
+      console.log(deletedBook);
+      this.books = this.books.filter(b => b._id !== deletedBook._id);
     });
   }
 

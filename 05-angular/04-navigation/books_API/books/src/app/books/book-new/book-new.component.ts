@@ -31,15 +31,16 @@ export class BookNewComponent implements OnInit {
   onSubmit(event: Event, form: NgForm) {
     event.preventDefault(); // prevents the default form action to submit info somewhere.
 
-    console.log('submitting form', form.value); // book object passed from binding and reference
+    console.log('submitting form', this.book); // book object passed from binding and reference
     // this.books.push(this.book); // books passed can be collected into the books array
     this.bookService.createBook(this.book).subscribe(book => {
+      this.createBook.emit(book);
       this.book = new Book();
-      form.reset();
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('books');
     });
     // this.createBook.emit(this.book);
     // this.book = new Book(); // break binding reference to prevent creating empty records, since the form is reset below
     // Use form to reset
+    form.reset();
   }
 }

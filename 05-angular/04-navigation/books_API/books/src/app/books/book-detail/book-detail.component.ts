@@ -15,20 +15,21 @@ import { map, switchMap } from 'rxjs/operators';
 export class BookDetailComponent implements OnInit {
   @Input()
   book: Book;
-  S;
+
   constructor(
     private readonly route: ActivatedRoute,
     private readonly bookService: BookService
   ) {}
+
   // communicate with activated route
   ngOnInit() {
     this.route.paramMap
       .pipe(
-        map(params => params.get('id')),
+        map(params => params.get('book_id')),
         switchMap(id => this.bookService.showBook(id))
       )
       .subscribe(book => {
-        console.log('book?', book);
+        console.log('book', book);
         this.book = book;
       });
   }

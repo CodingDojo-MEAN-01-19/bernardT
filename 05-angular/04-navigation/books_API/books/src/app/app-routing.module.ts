@@ -10,15 +10,25 @@ const enableTracing = true && !environment.production; // in a non-production en
 const routes: Routes = [
   {
     path: '',
-    component: fromBooks.BookListComponent,
+    redirectTo: 'books',
+    pathMatch: 'full',
   },
   {
-    path: 'books/new',
-    component: fromBooks.BookNewComponent,
-  },
-  {
-    path: 'books/:id',
-    component: fromBooks.BookDetailComponent,
+    path: 'books',
+    children: [
+      {
+        path: '',
+        component: fromBooks.BookListComponent,
+      },
+      {
+        path: 'new',
+        component: fromBooks.BookNewComponent,
+      },
+      {
+        path: ':id',
+        component: fromBooks.BookDetailComponent,
+      },
+    ],
   },
 ];
 

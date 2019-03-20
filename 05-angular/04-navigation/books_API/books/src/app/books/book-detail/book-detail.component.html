@@ -6,11 +6,33 @@
   <p>publisher: {{ book.publisher }}</p>
 </section> -->
 
-<section>
-  <h3>Selected Book</h3>
-  <p>id: {{ book?.id }}</p>
-  <p>title: {{ book?.title }}</p>
-  <p>author: {{ book?.author }}</p>
-  <p>pages: {{ book?.pages }}</p>
-  <p>publisher: {{ book?.publisher }}</p>
+<section *ngIf="book">
+  <div>
+    ID
+    <p>{{ book._id }}</p>
+  </div>
+  <div>
+    Title
+    <p>{{ book.title }}</p>
+  </div>
+
+  <div>
+    Author
+    <p>{{ book.author }}</p>
+  </div>
+
+  <div>
+    Pages
+    <p>{{ book.pages }}</p>
+  </div>
+
+  <div>
+    Year
+    <p>{{ book.year }}</p>
+  </div>
+
+  <div>
+    Publisher
+    <p>{{ book.publisher }}</p>
+  </div>
 </section>
